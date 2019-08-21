@@ -82,7 +82,6 @@ class Blog extends Model {
     var blog
     console.log('type of', typeof type, '****', typeof searchType.title)
     if (type === searchType.title) {
-      console.log('type is', type, 'keyword is', keyword)
       blog = await Blog.findAll({
         where: {
           title: {
@@ -92,7 +91,6 @@ class Blog extends Model {
       })
     }
     if (type === searchType.content) {
-      console.log('type is', type, 'keyword is', keyword)
       blog = await Blog.findAll({
         where: {
           content: {

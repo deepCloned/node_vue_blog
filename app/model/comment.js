@@ -36,7 +36,6 @@ class Comment extends Model {
     }
     const commentReuslt = await Comment.create(commentData)
     const addResult = await Blog.addCount(blogId, 'comment_count', 'add')
-    console.log(addResult)
     return commentReuslt
   }
 

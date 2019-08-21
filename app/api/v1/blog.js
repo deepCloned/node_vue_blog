@@ -105,7 +105,6 @@ blogRouter.post('/comment/delete', new Auth(7).verify(), async (ctx, next) => {
   const username = ctx.request.body.username
   const id = ctx.request.body.id
   if (username === ctx.auth.account) {
-    console.log('ctx.auth.account is', ctx.auth.account)
     let deleteResult = await Comment.deleteComment(id)
   }
   throw new Forbidden('没有权限执行该操作')
@@ -117,7 +116,6 @@ blogRouter.get('/search/:type/:keyword', async (ctx, next) => {
   const type = parseInt(v.get('path.type'))
   const keyword = v.get('path.keyword')
   const blog = await Blog.getBlogByType(type, keyword)
-  console.log('search blog is', blog)
   ctx.body = blog
 })
 
@@ -143,7 +141,6 @@ blogRouter.post('/add', new Auth(7).verify(), async (ctx, next) => {
  */
 blogRouter.post('/like', new Auth(7).verify(), async (ctx, next) => {
   const blogId = ctx.request.body.blogId
-  console.log('ctx.request.body.blogId', ctx.request.body.blogId)
   const username = ctx.auth.account
   const addLikeResult = await Favor.like(blogId, username)
   throw new Success('收藏成功')
@@ -151,7 +148,6 @@ blogRouter.post('/like', new Auth(7).verify(), async (ctx, next) => {
 
 blogRouter.post('/like/cancel', new Auth(7).verify(), async (ctx, next) => {
   const blogId = ctx.request.body.blogId
-  console.log('ctx.request.body.blogId', ctx.request.body.blogId)
   const username = ctx.auth.account
   const addLikeResult = await Favor.cancelLike(blogId, username)
   throw new Success('取消收藏成功')
@@ -164,7 +160,6 @@ blogRouter.post('/delete', new Auth(7).verify(), async (ctx, next) => {
   const v = await new PositiveParameter().validate(ctx)
   const id = v.get('body.id')
   const deleteResult = await Blog.deleteBlog(id)
-  console.log('deleteResult is', deleteResult)
   throw new Success('删除文章成功')
 })
 

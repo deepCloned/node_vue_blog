@@ -44,7 +44,6 @@ userRouter.post('/login', async (ctx) => {
     username: loginV.get('body.username'),
     password: loginV.get('body.password')
   })
-  console.log('res is', res)
   if (res) {
     throw new Success('登录成功')
     // 颁布令牌
@@ -61,7 +60,6 @@ userRouter.get('/my', new Auth(7).verify(), async (ctx) => {
 userRouter.get('/like', new Auth(7).verify(), async (ctx) => {
   const username = ctx.auth.account
   const blogRes = await Favor.getBlogListByLikeId(username)
-  console.log('blogRes is', blogRes)
   ctx.body = blogRes
 })
 

@@ -61,8 +61,6 @@ class User extends Model {
     if (type === loginType.EMAIL) {
       user = await User.getUserByEmail(account)
     }
-    console.log('account is', account)
-    console.log('type is', typeof type)
     if (!user) {
       throw new NotFound('用户不存在')
     }
@@ -82,13 +80,10 @@ class User extends Model {
         if (error) {
           throw new Error('密码加盐发生错误')
         }
-        console.log('salt is', salt)
         bcrypt.hash(val, salt, function (error, hash) {
-          console.log('encrypt val is', val)
           if (error) {
             throw new Error('密码加密发生错误')
           }
-          console.log('encrypt hash is', hash)
           _this.setDataValue('password', hash)
         })
       })

@@ -8,7 +8,6 @@ class RegisterUserManager {
   // 插入数据
   static async insertUserData ({username, email, password}) {
     const userExist = await User.getUserByUsername(username)
-    console.log('userExist is', userExist)
     const emailExist = await User.getUserByEmail(email)
     if (userExist) {
       throw new UserExistedException()

@@ -192,3 +192,33 @@ cd html
 mkdir /data
 cd data
 git clone 
+
+**mysql报错**
+问题：Client does not support authentication protocol requested by server; consider upgrading MySQL client
+问题描述：客户端不支持服务器请求的身份验证协议; 考虑在Handshake升级MySQL客户端。原因是MySQL8的新特性，MySQL8默认使用 caching_sha2_password 身份验证机制。旧客户端不支持这种验证，当然就无法登入了。
+解决：
+1、 mysql -u root -p
+2、 alter user 'root'@'localhost' identified with mysql_native_password by '123123111';
+3、flush privileges;
+*如果第二步出现错误，提示：Your password does not satisfy the current policy requirements*
+>解决：
+* 查看初始密码强度 -- SHOW VARIABLES LIKE 'validate_password%';
+* 设置密码强度（如果没有特殊需要，设置为low即可） -- set global validate_password_policy=LOW;
+
+**使用curl命令请求某个url**
+- 测试本地3000端口
+
+
+## 配置 Nginx 反向代理
+通过 vscode 直接在本地修改服务器上的文件 -- Remote-SSH(可能会连接不上)
+
+ubuntu 文件目录
+
+/etc -- 配置文件夹
+/etc/nginx/sites-enabled -- nginx 所有已经启动的站点
+
+自动生成 nginx 配置文件 -- nginxconfig.io
+
+**如何完全卸载nginx**
+sudo apt-get --purge remove nginx-common
+[完全卸载](https://segmentfault.com/a/1190000014027697?utm_source=tag-newest)

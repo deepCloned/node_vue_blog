@@ -33,17 +33,7 @@ class Favor extends Model {
     blogList.forEach(ele => {
       blogIdList.push(ele.blogId)
     })
-    console.log('blogIdList is', blogIdList)
     var blogs = []
-    // blogIdList.forEach(async ele => {
-    //   let record = await Blog.findOne({
-    //     where: {
-    //       id: ele
-    //     }
-    //   })
-    //   console.log('record is', record)
-    //   await blogs.push(record)
-    // })
     for (let i = 0; i < blogIdList.length; i ++) {
       let record = await Blog.findOne({
         where: {
