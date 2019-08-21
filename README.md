@@ -126,6 +126,10 @@ linux 命令：
 * apt update -- 全部更新
 * apt install nginx -y -- 安装nginx
 
+**关于安装了nginx之后外网不能访问的问题**
+>问题描述：未配置安全组规则
+解决方法：添加安全组规则，端口范围：80 授权对象：0.0.0.0/0 
+
 **安装mysql**
 * apt install mysql -y
 * netstat -tap | grep mysql -- 查看是否安装成功
@@ -174,5 +178,17 @@ git push -u origin master
 4. git remote add origin + 远程仓库地址 //链接远程仓库，创建主分支
 
 5. git pull origin master // 把本地仓库的变化连接到远程仓库主分支
+git pull origin master --allow-unrelated-histories -- 强制
 
 6. git push -u origin master //把本地仓库的文件推送到远程仓库
+
+**配置服务器git权限**
+>部署公钥，加入服务器端 ssh key
+
+**拉取代码**
+* nginx
+cd /var/www
+cd html
+mkdir /data
+cd data
+git clone 
