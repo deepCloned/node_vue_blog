@@ -9,8 +9,7 @@ const {
 const Auth = require('../../../middleware/auth')
 
 const RegisterUser = require('../../service/registerUser')
-// const LoginManager = require('../../service/LoginManager')
-const LoginManager = require(path.join(__dirname, '../../service/LoginManager'))
+const LoginManager = require('../../service/loginManager')
 
 const {
   Success
