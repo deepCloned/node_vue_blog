@@ -4,7 +4,7 @@ module.exports = {
   db: {
     database: 'blog',
     username: 'root',
-    password: '123123111',
+    password: 'shmily_zx0206',
     host: 'localhost',
     dialect: 'mysql',
     port: '3306'
