@@ -1,10 +1,10 @@
 module.exports = {
   PORT: 3000,
-  ENV: 'pro',
+  ENV: 'dev',
   db: {
     database: 'blog',
     username: 'root',
-    password: 'shmily_zx0206',
+    password: '123123111',
     host: 'localhost',
     dialect: 'mysql',
     port: '3306'

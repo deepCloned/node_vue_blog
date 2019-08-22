@@ -30,21 +30,10 @@ class Auth {
         // 使用var代替letconst，要不然外部访问不到，块级作用域
         var result = await jwt.verify(token.name, secretKey)
       } catch (error) {
-        // switch (error.name) {
-        //   case JsonWebTokenError
-        //     throw new Forbidden('token不合法')
-        //     break;
-        //   case TokenExpiredError
-        //     throw new Forbidden('token已过期，请重新获取')
-        //     break;
-        //   default
-        //     throw new Forbidden(error.name)
-        // }
         if (error.name === 'JsonWebTokenError') {
           throw new Forbidden('token不合法')
         }
         if (error.name === 'TokenExpiredError') {
-          console.log('****** token已过期 ***')
           throw new Forbidden('token已过期，请重新登录')
         }
       }

@@ -222,3 +222,21 @@ ubuntu 文件目录
 **如何完全卸载nginx**
 sudo apt-get --purge remove nginx-common
 [完全卸载](https://segmentfault.com/a/1190000014027697?utm_source=tag-newest)
+
+**Sequelize报错**
+>Unhandled rejection SequelizeDatabaseError: Incorrect string value
+
+* 错因：数据库不能识别中文
+* 解决: 修改数据库编码模式为 utf-8
+1、查看 mysql 编码设置 -- show variables like "%character%";
+2、set character_set_client = utf8;
+set character_set_server = utf8;
+set character_set_connection = utf8;
+set character_set_database = utf8;
+set character_set_results = utf8;
+set collation_connection = utf8_general_ci;
+set collation_database = utf8_general_ci;
+set collation_server = utf8_general_ci;
+
+3、创建数据库的时候设置编码模式
+create database blog character set utf8;

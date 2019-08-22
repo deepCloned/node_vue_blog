@@ -22,13 +22,8 @@ const tokenRouter = new Router({
 
 tokenRouter.post('/token', async (ctx, next) => {
   let loginV = await new LoginValidator().validate(ctx)
-  // const token = await LoginManager.judgePassword({
-  //   username: loginV.get('body.username'),
-  //   password: loginV.get('body.password')
-  // })
   const type = loginV.get('body.type')
   var token = null
-
   switch (type) {
     case loginType.USERNAME:
       token = await LoginManager.judgePassword({

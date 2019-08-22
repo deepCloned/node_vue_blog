@@ -76,17 +76,17 @@ class User extends Model {
   // 加密
   static async encrypt (val) {
     const _this = this
-      bcrypt.genSalt(degree, function (error, salt) {
+    bcrypt.genSalt(degree, function (error, salt) {
+      if (error) {
+        throw new Error('密码加盐发生错误')
+      }
+      bcrypt.hash(val, salt, function (error, hash) {
         if (error) {
-          throw new Error('密码加盐发生错误')
+          throw new Error('密码加密发生错误')
         }
-        bcrypt.hash(val, salt, function (error, hash) {
-          if (error) {
-            throw new Error('密码加密发生错误')
-          }
-          _this.setDataValue('password', hash)
-        })
+        _this.setDataValue('password', hash)
       })
+    })
   }
 }
 

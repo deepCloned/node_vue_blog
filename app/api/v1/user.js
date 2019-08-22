@@ -36,20 +36,6 @@ userRouter.post('/register', async (ctx) => {
   }
 })
 
-
-// login api
-userRouter.post('/login', async (ctx) => {
-  let loginV = await new LoginValidator().validate(ctx)
-  const res = await LoginManager.judgePassword({
-    username: loginV.get('body.username'),
-    password: loginV.get('body.password')
-  })
-  if (res) {
-    throw new Success('登录成功')
-    // 颁布令牌
-  }
-})
-
 // my api
 userRouter.get('/my', new Auth(7).verify(), async (ctx) => {
   const username = ctx.auth.account
