@@ -40,7 +40,6 @@ class Auth {
 
       // 验证成功
       ctx.auth = result
-      console.log('ctx.auth is', ctx.auth)
       if (ctx.auth.scope < this.level) {
         throw new Forbidden('权限不足，不能访问')
       }
