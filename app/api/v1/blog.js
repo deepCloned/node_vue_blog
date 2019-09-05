@@ -147,9 +147,9 @@ blogRouter.post('/like', new Auth(7).verify(), async (ctx, next) => {
 })
 
 blogRouter.post('/like/cancel', new Auth(7).verify(), async (ctx, next) => {
-  const blogId = ctx.request.body.blogId
+  const id = ctx.request.body.id
   const username = ctx.auth.account
-  const addLikeResult = await Favor.cancelLike(blogId, username)
+  const addLikeResult = await Favor.cancelLike(id, username)
   throw new Success('取消收藏成功')
 })
 
