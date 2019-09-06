@@ -140,9 +140,9 @@ blogRouter.post('/add', new Auth(7).verify(), async (ctx, next) => {
  * like or dislike
  */
 blogRouter.post('/like', new Auth(7).verify(), async (ctx, next) => {
-  const blogId = ctx.request.body.blogId
+  const id = ctx.request.body.id
   const username = ctx.auth.account
-  const addLikeResult = await Favor.like(blogId, username)
+  const addLikeResult = await Favor.like(id, username)
   throw new Success('收藏成功')
 })
 
