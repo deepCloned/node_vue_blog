@@ -1,0 +1,20 @@
+{
+  "banner": [
+    {
+      "productId": 19,
+      "image": "banner@1.png"
+    },
+    {
+      "productId": 22,
+      "image": "banner@2.png"
+    },
+    {
+      "productId": 6,
+      "image": "banner@3.png"
+    },
+    {
+      "productId": 5,
+      "image": "banner@4.png"
+    }
+  ]
+}

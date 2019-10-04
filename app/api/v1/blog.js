@@ -2,6 +2,7 @@ const Router = require('koa-router')
 
 const Auth = require('../../../middleware/auth')
 
+// 引入模型，操作模型映射到数据库
 const Blog = require('../../model/blog')
 const Comment = require('../../model/comment')
 const Favor = require('../../model/favor')
@@ -11,6 +12,7 @@ const {
   searchType
 } = require('../../libs/emura')
 
+// 引入验证函数
 const {
   PositiveParameter,
   CategoryValidator,
@@ -20,6 +22,7 @@ const {
   DetailValidator
 } = require('../../validator/validator')
 
+// 引入抛出异常的方法
 const {
   Fail,
   Success,
@@ -27,11 +30,12 @@ const {
   ParameterException
 } = require('../../exception/httpException')
 
+// 设置路由前缀
 const blogRouter = new Router({
   prefix: '/v1/blog'
 })
 
-// get latest blog
+// 获取最新博客
 blogRouter.get('/latest', async (ctx) => {
   const res = await Blog.getDataByTime()
   if (!res) {
@@ -40,8 +44,7 @@ blogRouter.get('/latest', async (ctx) => {
   ctx.body = res
 })
 
-// get hot blog
-
+// 获取热门博客
 blogRouter.get('/hot', async (ctx) => {
   const res = await Blog.getHotBlog()
   if (!res) {
@@ -50,7 +53,7 @@ blogRouter.get('/hot', async (ctx) => {
   ctx.body = res
 })
 
-// get blog by category
+// 通过类别获取博客
 blogRouter.get('/:category', async (ctx) => {
   // const v = await new CategoryValidator().validate(ctx)
   const category = ctx.params.category
@@ -62,7 +65,7 @@ blogRouter.get('/:category', async (ctx) => {
   ctx.body = dataList
 })
 
-// get blog by id
+// 通过 id 值获取每一个博客
 blogRouter.post('/detail', async (ctx) => {
   const v = await new DetailValidator().validate(ctx)
   const id = v.get('body.id')
@@ -78,7 +81,7 @@ blogRouter.post('/detail', async (ctx) => {
   ctx.body = blog
 })
 
-// get comment
+// 获取该篇文章的评论
 blogRouter.get('/comment/:id', async (ctx, next) => {
   const v = await new PositiveParameter().validate(ctx)
   const id = v.get('path.id')
@@ -89,7 +92,7 @@ blogRouter.get('/comment/:id', async (ctx, next) => {
   ctx.body = res
 })
 
-// add comment
+// 添加评论
 blogRouter.post('/comment/add', new Auth().verify(), async (ctx, next) => {
   const v = await new CommentValidator().validate(ctx)
   let addResult = await Comment.addComment({
@@ -100,7 +103,7 @@ blogRouter.post('/comment/add', new Auth().verify(), async (ctx, next) => {
   throw new Success('评论成功')
 })
 
-// reduce comment
+// 删除评论
 blogRouter.post('/comment/delete', new Auth(7).verify(), async (ctx, next) => {
   const username = ctx.request.body.username
   const id = ctx.request.body.id
@@ -110,7 +113,7 @@ blogRouter.post('/comment/delete', new Auth(7).verify(), async (ctx, next) => {
   throw new Forbidden('没有权限执行该操作')
 })
 
-// search blog by type && keyword
+// 通过
 blogRouter.get('/search/:type/:keyword', async (ctx, next) => {
   const v = await new KeywordValidator().validate(ctx)
   const type = parseInt(v.get('path.type'))
@@ -119,9 +122,7 @@ blogRouter.get('/search/:type/:keyword', async (ctx, next) => {
   ctx.body = blog
 })
 
-/**
- * add new blog
- */
+// 新增一篇博客
 blogRouter.post('/add', new Auth(7).verify(), async (ctx, next) => {
   const v = await new BlogValidator().validate(ctx)
   const username = ctx.auth.account
@@ -136,9 +137,7 @@ blogRouter.post('/add', new Auth(7).verify(), async (ctx, next) => {
   }
 })
 
-/**
- * like or dislike
- */
+// 喜欢 / 取消喜欢博客
 blogRouter.post('/like', new Auth(7).verify(), async (ctx, next) => {
   const id = ctx.request.body.id
   const username = ctx.auth.account
@@ -153,9 +152,7 @@ blogRouter.post('/like/cancel', new Auth(7).verify(), async (ctx, next) => {
   throw new Success('取消收藏成功')
 })
 
-/**
- * delete blog
- */
+// 删除博客
 blogRouter.post('/delete', new Auth(7).verify(), async (ctx, next) => {
   const v = await new PositiveParameter().validate(ctx)
   const id = v.get('body.id')

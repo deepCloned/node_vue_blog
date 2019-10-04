@@ -23,7 +23,7 @@ const userRouter = new Router({
   prefix: '/v1/user'
 })
 
-// register api
+// 注册（登录的时候直接获取 token）
 userRouter.post('/register', async (ctx) => {
   const v = await new RegisterValidator().validate(ctx)
   const result = await RegisterUser.insertUserData({
@@ -36,7 +36,7 @@ userRouter.post('/register', async (ctx) => {
   }
 })
 
-// my api
+// 我的
 userRouter.get('/my', new Auth(7).verify(), async (ctx) => {
   const username = ctx.auth.account
   const blogRes = await Blog.getBlogByAuthor(username)

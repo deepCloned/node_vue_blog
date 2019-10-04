@@ -1,0 +1,16 @@
+{
+  "theme": [
+    {
+      "theme": "fruit",
+      "image": "theme@1.png"
+    },
+    {
+      "theme": "new",
+      "image": "theme@2.png"
+    },
+    {
+      "theme": "fry",
+      "image": "theme@3.png"
+    }
+  ]
+}

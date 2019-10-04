@@ -10,10 +10,11 @@ const {
   Success,
 } = require('../app/exception/httpException')
 
+// 定义验证中间件
 class Auth {
   constructor (level) {
+    // 对于不同的页面设置不同的权限等级
     this.level = level
-    
     // 设置权限等级
     Auth.USER = 8
     Auth.ADMIN = 16
@@ -23,7 +24,7 @@ class Auth {
     return async (ctx, next) => {
       const token = basicAuth(ctx.req)
       if (!token || !token.name) {
-        throw new Forbidden('token不存在，请登录后以获得更好体验')
+        throw new Forbidden('token不存在，请登录后获取')
       }
 
       try {
@@ -31,7 +32,7 @@ class Auth {
         var result = await jwt.verify(token.name, secretKey)
       } catch (error) {
         if (error.name === 'JsonWebTokenError') {
-          throw new Forbidden('token不合法')
+          throw new Forbidden('token不合法，请登录重新获取')
         }
         if (error.name === 'TokenExpiredError') {
           throw new Forbidden('token已过期，请重新登录')

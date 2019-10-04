@@ -20,6 +20,7 @@ const tokenRouter = new Router({
   prefix: '/v1'
 })
 
+// 获取 token
 tokenRouter.post('/token', async (ctx, next) => {
   let loginV = await new LoginValidator().validate(ctx)
   const type = loginV.get('body.type')
@@ -54,6 +55,7 @@ tokenRouter.post('/token', async (ctx, next) => {
   }
 })
 
+// 验证 token 令牌是否合法或者是否过期
 tokenRouter.get('/token/verify', new Auth().verify(), async (ctx) => {
   ctx.body = {
     message: 'token验证成功',

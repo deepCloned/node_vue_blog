@@ -1,0 +1,292 @@
+{
+  "product": [
+    {
+      "productId": 1,
+      "title": "梨花带雨 3个",
+      "theme": "fruit",
+      "category": "fruit",
+      "price": 0.10,
+      "amount": 1000,
+      "image": "product-fruit@1.png"
+    },
+    {
+      "productId": 2,
+      "title": "春生龙眼 500克",
+      "theme": "fruit",
+      "category": "fruit",
+      "price": 0.10,
+      "amount": 1000,
+      "image": "product-fruit@2.png"
+    },
+    {
+      "productId": 3,
+      "title": "夏日芒果 3个",
+      "theme": "fruit",
+      "category": "fruit",
+      "price": 0.10,
+      "amount": 1000,
+      "image": "product-fruit@3.png"
+    },
+    {
+      "productId": 4,
+      "title": "冬木红枣 500克",
+      "theme": "fruit",
+      "category": "fruit",
+      "price": 0.10,
+      "amount": 1000,
+      "image": "product-fruit@4.png"
+    },
+    {
+      "productId": 5,
+      "title": "万紫千凤梨 300克",
+      "theme": "fruit",
+      "category": "fruit",
+      "price": 0.10,
+      "amount": 1000,
+      "image": "product-fruit@5.png"
+    },
+    {
+      "productId": 6,
+      "title": "贵妃笑",
+      "theme": "fruit",
+      "category": "fruit",
+      "price": 0.10,
+      "amount": 1000,
+      "image": "product-fruit@6.png"
+    },
+    {
+      "productId": 7,
+      "title": "珍奇异果 3个",
+      "theme": null,
+      "category": "fruit",
+      "price": 0.10,
+      "amount": 1000,
+      "image": "product-fruit@7.png"
+    },
+    {
+      "productId": 8,
+      "title": "红衣青瓜 混搭 160克",
+      "theme": null,
+      "category": "fruit",
+      "price": 0.10,
+      "amount": 1000,
+      "image": "product-fruit@8.png"
+    },
+    {
+      "productId": 9,
+      "title": "芹菜 半斤",
+      "theme": "new",
+      "category": "vegetable",
+      "price": 0.10,
+      "amount": 1000,
+      "image": "product-vg@1.png"
+    },
+    {
+      "productId": 10,
+      "title": "泥篙 半斤",
+      "theme": "new",
+      "category": "vegetable",
+      "price": 0.10,
+      "amount": 1000,
+      "image": "product-vg@2.png"
+    },
+    {
+      "productId": 11,
+      "title": "西红柿 一斤",
+      "theme": "new",
+      "category": "vegetable",
+      "price": 0.10,
+      "amount": 1000,
+      "image": "product-vg@3.png"
+    },
+    {
+      "productId": 12,
+      "title": "土豆 半斤",
+      "theme": "new",
+      "category": "vegetable",
+      "price": 0.10,
+      "amount": 1000,
+      "image": "product-vg@4.png"
+    },
+    {
+      "productId": 13,
+      "title": "青椒 半斤",
+      "theme": "new",
+      "category": "vegetable",
+      "price": 0.10,
+      "amount": 1000,
+      "image": "product-vg@5.png"
+    },
+    {
+      "productId": 14,
+      "title": "油炸花生 300克",
+      "theme": "fry",
+      "category": "fry",
+      "price": 0.10,
+      "amount": 1000,
+      "image": "product-fry@1.png"
+    },
+    {
+      "productId": 15,
+      "title": "春泥西瓜子 128克",
+      "theme": "fry",
+      "category": "fry",
+      "price": 0.10,
+      "amount": 1000,
+      "image": "product-fry@2.png"
+    },
+    {
+      "productId": 16,
+      "title": "碧水葵花籽 128克",
+      "theme": "fry",
+      "category": "fry",
+      "price": 0.10,
+      "amount": 1000,
+      "image": "product-fry@3.png"
+    },
+    {
+      "productId": 17,
+      "title": "锈色瓜子 100克",
+      "theme": "fry",
+      "category": "fry",
+      "price": 0.10,
+      "amount": 1000,
+      "image": "product-fry@4.png"
+    },
+    {
+      "productId": 18,
+      "title": "春泥花生 200克",
+      "theme": "fry",
+      "category": "fry",
+      "price": 0.10,
+      "amount": 1000,
+      "image": "product-fry@5.png"
+    },
+    {
+      "productId": 19,
+      "title": "小红的猪耳朵 120克",
+      "theme": null,
+      "category": "cake",
+      "price": 0.10,
+      "amount": 1000,
+      "image": "product-cake@1.png"
+    },
+    {
+      "productId": 20,
+      "title": "梅兰青花糕 1个",
+      "theme": null,
+      "category": "cake",
+      "price": 0.10,
+      "amount": 1000,
+      "image": "product-cake@2.png"
+    },
+    {
+      "productId": 21,
+      "title": "清凉薄荷糕 1个",
+      "theme": null,
+      "category": "cake",
+      "price": 0.10,
+      "amount": 1000,
+      "image": "product-cake@3.png"
+    },
+    {
+      "productId": 22,
+      "title": "小明的妙脆角 120克",
+      "theme": null,
+      "category": "cake",
+      "price": 0.10,
+      "amount": 1000,
+      "image": "product-cake@4.png"
+    },
+    {
+      "productId": 23,
+      "title": "红袖枸杞 6克*3袋",
+      "theme": null,
+      "category": "tea",
+      "price": 0.10,
+      "amount": 1000,
+      "image": "product-tea@1.png"
+    },
+    {
+      "productId": 24,
+      "title": "碧螺春 12克*3袋",
+      "theme": null,
+      "category": "tea",
+      "price": 0.10,
+      "amount": 1000,
+      "image": "product-tea@2.png"
+    },
+    {
+      "productId": 25,
+      "title": "西湖龙井 8克*3袋",
+      "theme": null,
+      "category": "tea",
+      "price": 0.10,
+      "amount": 1000,
+      "image": "product-tea@3.png"
+    },
+    {
+      "productId": 26,
+      "title": "素米 327克",
+      "theme": null,
+      "category": "rice",
+      "price": 0.10,
+      "amount": 1000,
+      "image": "product-rice@1.png"
+    },
+    {
+      "productId": 27,
+      "title": "绿豆 125克",
+      "theme": null,
+      "category": "rice",
+      "price": 0.10,
+      "amount": 1000,
+      "image": "product-rice@2.png"
+    },
+    {
+      "productId": 28,
+      "title": "芝麻 50克",
+      "theme": null,
+      "category": "rice",
+      "price": 0.10,
+      "amount": 1000,
+      "image": "product-rice@3.png"
+    },
+    {
+      "productId": 29,
+      "title": "猴头菇 370克",
+      "theme": null,
+      "category": "rice",
+      "price": 0.10,
+      "amount": 1000,
+      "image": "product-rice@4.png"
+    },
+    {
+      "productId": 30,
+      "title": "冰心鸡蛋 2个",
+      "theme": null,
+      "category": "rice",
+      "price": 0.10,
+      "amount": 1000,
+      "image": "product-rice@5.png"
+    },
+    {
+      "productId": 31,
+      "title": "八宝莲子 200克",
+      "theme": null,
+      "category": "rice",
+      "price": 0.10,
+      "amount": 1000,
+      "image": "product-rice@6.png"
+    },
+    {
+      "productId": 32,
+      "title": "深涧木耳 78克",
+      "theme": null,
+      "category": "rice",
+      "price": 0.10,
+      "amount": 1000,
+      "image": "product-rice@7.png"
+    }
+  ]
+}

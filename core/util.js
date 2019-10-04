@@ -3,9 +3,7 @@ const {
     secretKey,
     expiresIn
 } = require('../config/config').security
-/***
- * 
- */
+
 const findMembers = function (instance, {
     prefix,
     specifiedType,
@@ -46,7 +44,6 @@ const findMembers = function (instance, {
 // 颁布令牌
 
 const generateToken = function (account, scope) {
-    console.log('account is', account)
     return jwt.sign({
         account,
         scope

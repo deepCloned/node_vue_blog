@@ -92,22 +92,6 @@ class LoginValidator extends LinValidator {
 
 }
 
-// 分类类型检验
-class CategoryValidator extends LinValidator{
-
-  // validateCategory (vals) {
-  //   const category = vals.body.category
-  //   console.log(category)
-  //   if (!category) {
-  //     throw new Error('category为必传值')
-  //   }
-  //   const isLegal = getCategoryIn(category)
-  //   if (!isLegal) {
-  //     throw new Error('category传值不合法')
-  //   }
-  // }
-}
-
 // 检测评论内容
 class CommentValidator extends LinValidator{
   constructor() {
@@ -152,14 +136,6 @@ class KeywordValidator extends LinValidator {
   }
 }
 
-/**
- * validate blog
- */
-class BlogValidator extends LinValidator {
-  constructor () {
-    super()
-  }
-}
 
 /**
  * get detail validate
@@ -180,13 +156,79 @@ class DetailValidator extends LinValidator {
   }
 }
 
+// small shop 验证
+class ValidateRegister extends LinValidator {
+  constructor () {
+    super()
+    this.username = [
+      new Rule('isLength', '用户名不能为空，最少6个字符，最多32个字符', {
+        min: 6,
+        max: 32
+      })
+    ]
+    this.password = [
+      new Rule('matches', '至少使用数字、字母、符号其中的两种', '(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^[^\s\u4e00-\u9fa5]{8,16}$')
+    ]
+  }
+
+}
+
+// 分类的验证
+class ValidateCategory extends LinValidator {
+  constructor () {
+    super()
+    this.category = [
+      new Rule('isString', 'category值不能为空')
+    ]
+  }
+}
+
+// 主题的验证
+class ValidateTheme extends LinValidator {
+  constructor () {
+    super()
+    this.theme = [
+      new Rule('isString', 'theme值不能为空')
+    ]
+  }
+}
+
+// 新增地址的验证
+class ValidateAddress extends LinValidator {
+  constructor () {
+    super()
+    this.user = new Rule('isNotEmpty', '用户名不能为空')
+    this.name = new Rule('isNotEmpty', '收货人不能为空')
+    this.mobile = new Rule('isNotEmpty', '手机号码不符合规范', '^1[3456789]\d{9}$')
+    this.area = new Rule('isNotEmpty', '地区不能为空')
+    this.address = new Rule('isNotEmpty', '详细详细地址不能为空')
+  }
+}
+
+// 新增订单的验证
+class ValidateOrder extends LinValidator {
+  constructor () {
+    super()
+    this.username = new Rule('isNotEmpty', '用户名不能为空')
+    this.receiver = new Rule('isNotEmpty', '收货人不能为空')
+    this.address = new Rule('isNotEmpty', '收货地址不能为空')
+    this.tel = new Rule('isNotEmpty', '手机号码不符合规范', '^1[3456789]\d{9}$')
+    this.allCount = new Rule('isNotEmpty', '总数量不能为空')
+    this.account = new Rule('isNotEmpty', '总价不能为空')
+    this.products = new Rule('isNotEmpty', '商品列表不能为空')
+  }
+}
+
 module.exports = {
   PositiveParameter,
   RegisterValidator,
   LoginValidator,
-  CategoryValidator,
   CommentValidator,
   KeywordValidator,
-  BlogValidator,
-  DetailValidator
+  DetailValidator,
+  ValidateRegister,
+  ValidateCategory,
+  ValidateTheme,
+  ValidateAddress,
+  ValidateOrder,
 }

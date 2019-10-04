@@ -33,9 +33,7 @@ class Blog extends Model {
     })
   }
 
-  /**
-   * get blog by user
-   */
+  // 获取自己写过的博客
   static async getBlogByAuthor (author) {
     return await Blog.findAll({
       where: {
@@ -55,7 +53,7 @@ class Blog extends Model {
     })
   }
 
-  // 根据id获取特定文章
+  // 根据id获取特定博客
   static async getBlogById (id) {
     const blog = await Blog.findOne({
       where: {

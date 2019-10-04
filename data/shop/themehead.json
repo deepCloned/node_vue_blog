@@ -1,0 +1,16 @@
+{
+  "head": [
+    {
+      "theme": "fruit",
+      "headImage": "theme-head@1.png"
+    },
+    {
+      "theme": "new",
+      "headImage": "theme-head@2.png"
+    },
+    {
+      "theme": "fry",
+      "headImage": "theme-head@3.png"
+    }
+  ]
+}

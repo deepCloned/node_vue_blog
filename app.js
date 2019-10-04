@@ -12,11 +12,15 @@ const catchError = require('./middleware/exception')
 
 const app = new Koa()
 
-
+// 初始化时调用
 // require('./app/model/user')
 // require('./app/model/blog')
 // require('./app/model/comment')
 // require('./app/model/favor')
+
+// 创建shop里面所有的表
+const initShop = require('./core/initShop')
+initShop()
 
 app.use(cors())
 

@@ -1,0 +1,34 @@
+{
+  "category": [
+    {
+      "category": "fruit",
+      "image": "category@1.png",
+      "name": "水果"
+    },
+    {
+      "category": "vegetable",
+      "image": "category@2.png",
+      "name": "蔬菜"
+    },
+    {
+      "category": "fry",
+      "image": "category@3.png",
+      "name": "炒货"
+    },
+    {
+      "category": "cake",
+      "image": "category@4.png",
+      "name": "点心"
+    },
+    {
+      "category": "tea",
+      "image": "category@5.png",
+      "name": "粗茶"
+    },
+    {
+      "category": "rice",
+      "image": "category@6.png",
+      "name": "淡饭"
+    }
+  ]
+}

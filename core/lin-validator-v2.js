@@ -4,11 +4,6 @@
  * 微信公众号：林间有风
  */
 
-/**
- * 作业部落
- * 微信部落
- */
-
 const validator = require('validator')
 const {
     ParameterException

@@ -13,9 +13,8 @@ const {
 } = require('../exception/httpException')
 
 class Favor extends Model {
-  /**
-   * get blog by username
-   */
+  
+  // 通过用户名获取博客
   static async getBlogListByUsername (username) {
     return Favor.findAll({
       where: {
@@ -24,9 +23,7 @@ class Favor extends Model {
     })
   }
 
-  /**
-   * get blogList by listId
-   */
+  // favor 表中存储喜欢博客的id号，在获取具体内容的时候要去存储博客的表中查找
   static async getBlogListByLikeId (username) {
     const blogList = await Favor.getBlogListByUsername(username)
     let blogIdList = []
@@ -47,9 +44,7 @@ class Favor extends Model {
     return blogs
   } 
 
-  /**
-   * get record by username and blogId
-   */
+  
   static async getLikeData (username, blogId) {
     const record = await Favor.findOne({
       where: {
@@ -62,7 +57,8 @@ class Favor extends Model {
     }
     return true
   }
-
+  
+  // 增加喜欢的记录，需要同时操作几个表
   static async like (blogId, username) {
     const record = await Favor.findOne({
       where: {
@@ -85,7 +81,8 @@ class Favor extends Model {
       await blog.increment('like_count', {by: 1, transaction: t})
     })
   }
-
+  
+  // 取消喜欢操作
   static async cancelLike (blogId, username) {
     const record = await Favor.findOne({
       where: {

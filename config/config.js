@@ -1,3 +1,4 @@
+// 定义全局变量
 module.exports = {
   PORT: 3000,
   ENV: 'dev',

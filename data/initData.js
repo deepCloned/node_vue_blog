@@ -3,7 +3,7 @@ const fs = require('fs')
 const Blog = require('../app/model/blog')
 
 
-
+// 初始化数据
 class LoadFile {
   // 读取文件
   static readFiles (_path) {
@@ -32,24 +32,6 @@ class LoadFile {
     })
   }
 }
-
-
-// function read(_path) {
-//   return new Promise(function (resolve, reject) {
-//     fs.readFile(_path, 'utf8', function (err, res) {
-//       if (err) {
-//         reject(err)
-//       }
-//       resolve(res)
-//     })
-//   })
-// }
-
-// function eac(arr) {
-//   arr.forEach((ele, index) => {
-//     console.log(index)
-//   })
-// }
 
 const result = LoadFile.readFiles('./category.json')
 result.then(res => {

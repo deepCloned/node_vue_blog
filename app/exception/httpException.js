@@ -53,13 +53,12 @@ class NotFound extends HttpException {
   }
 }
 
-// const exceptionErrorCode = {
-//   10000: '未知异常，一般是服务器端错误',
-//   10001: '传参异常'，
-//   10003: '禁止访问',
-//   10004: '没有找到数据'
-// }
-
+// 商品数量不足
+class NotEnough extends HttpException {
+  constructor (message='对不起，所选货物暂时没有库存', code=400, errorCode=10005) {
+    super(message, code, errorCode)
+  }
+}
 
 module.exports = {
   HttpException,
@@ -68,5 +67,6 @@ module.exports = {
   Success,
   Fail,
   Forbidden,
-  NotFound
+  NotFound,
+  NotEnough
 }

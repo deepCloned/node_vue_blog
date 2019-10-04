@@ -39,7 +39,6 @@ class Comment extends Model {
     return commentReuslt
   }
 
-  //increment decrement
   // 删除评论操作
   static async deleteComment (id) {
     const comment = await Comment.findOne({
