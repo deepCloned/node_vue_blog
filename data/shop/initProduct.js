@@ -77,37 +77,37 @@ class LoadFile {
   }
 }
 
-// const product = LoadFile.readFiles('./product.json')
-// product.then(res => {
-//   res = JSON.parse(res)
-//   const dataList = res.product
-//   LoadFile.getProduct(dataList)
-// })
+const product = LoadFile.readFiles('./product.json')
+product.then(res => {
+  res = JSON.parse(res)
+  const dataList = res.product
+  LoadFile.getProduct(dataList)
+})
 
-// const banner = LoadFile.readFiles('./banner.json')
-// banner.then(res => {
-//   res = JSON.parse(res)
-//   const dataList = res.banner
-//   LoadFile.getBanner(dataList)
-// })
+const banner = LoadFile.readFiles('./banner.json')
+banner.then(res => {
+  res = JSON.parse(res)
+  const dataList = res.banner
+  LoadFile.getBanner(dataList)
+})
 
-// const category = LoadFile.readFiles('./category.json')
-// category.then(res => {
-//   res = JSON.parse(res)
-//   const dataList = res.category
-//   LoadFile.getCatgory(dataList)
-// })
+const category = LoadFile.readFiles('./category.json')
+category.then(res => {
+  res = JSON.parse(res)
+  const dataList = res.category
+  LoadFile.getCatgory(dataList)
+})
 
-// const theme = LoadFile.readFiles('./theme.json')
-// theme.then(res => {
-//   res = JSON.parse(res)
-//   const dataList = res.theme
-//   LoadFile.getTheme(dataList)
-// })
+const theme = LoadFile.readFiles('./theme.json')
+theme.then(res => {
+  res = JSON.parse(res)
+  const dataList = res.theme
+  LoadFile.getTheme(dataList)
+})
 
-// const themeHead = LoadFile.readFiles('./themeHead.json')
-// themeHead.then(res => {
-//   res = JSON.parse(res)
-//   const dataList = res.head
-//   LoadFile.getThemeHead(dataList)
-// })
+const themeHead = LoadFile.readFiles('./themeHead.json')
+themeHead.then(res => {
+  res = JSON.parse(res)
+  const dataList = res.head
+  LoadFile.getThemeHead(dataList)
+})
