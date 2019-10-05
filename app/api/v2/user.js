@@ -71,10 +71,12 @@ user.post('/address/get', new Auth(7).verify(), async (ctx) => {
     }
     checkedRes.push(obj)
   }
+  const defaultAddress = checkedRes.slice(-1)
+  const normalAddress = checkedRes.splice(0, checkedRes.length - 1)
   ctx.body = {
     errorCode: 0,
     message: '请求成功',
-    addresses: checkedRes
+    addresses: defaultAddress.concat(normalAddress)
   }
 })
 
@@ -93,7 +95,7 @@ user.post('/address/add', new Auth(7).verify(), async (ctx) => {
     postalCode: v.get('body.postalCode'),
     isDefault: v.get('body.isDefault')
   })
-  if(res._options.isNewRecord) {
+  if(res) {
     throw new Success('添加新地址成功')
   }
 })
