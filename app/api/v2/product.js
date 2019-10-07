@@ -125,8 +125,9 @@ productRouter.get('/theme/:theme', async (ctx) => {
   if (!theme) {
     throw new Error('theme为必传参数')
   }
+  const headImage = await ThemeHead.getImageByTheme(theme)
   const themeData = {
-    image: await ThemeHead.getImageByTheme(theme),
+    image: headImage[0],
     products: await Product.getProductByTheme(theme)
   }
   ctx.body = {
