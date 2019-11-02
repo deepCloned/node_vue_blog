@@ -30,7 +30,7 @@
     "lodash": "^4.17.11",
     "mysql2": "^1.6.5",
     "require-directory": "^2.1.1",
-    "sequelize": "^5.8.10",
+    "sequelize": "^5.15.1",
     "validator": "^11.0.0"
   },
   "devDependencies": {
